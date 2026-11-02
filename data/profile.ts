@@ -7,14 +7,16 @@ export const profile = {
   name: 'Wang (Steven) Liao',
   affiliation: 'University of Memphis',
   program: 'Management Information Systems',
-  email: 'wliao1@memphis.edu',
+  email: 'stevenl960823@gmail.com',
   linkedIn: 'https://www.linkedin.com/in/wang-liao-0823/',
   github: 'https://github.com/stevenl0823',
   cvDownload: '/wang-liao-cv.docx',
+  resumeDownload: '/wang-liao-resume.pdf',
+  sourceCode: 'https://github.com/stevenl0823/personal_website',
   tagline:
     'Business analytics · Sports analytics · Data analytics',
   introduction:
-    'I bring quantitative research experience together with a background in sport management, venue finance, and student consulting. My toolkit includes SQL, Python, R, Tableau, and advanced Excel, with research experience in regression, ANOVA, structural equation modeling, and difference-in-differences visualization.',
+    'I combine quantitative research with experience in sports business, venue finance, and data management. My work includes statistical modeling, an NBA player-performance and salary study, and communicating analytical findings. I use SQL, Python, R, Tableau, and Excel to investigate questions and explain results with their assumptions and limitations.',
 } as const;
 
 export const highlights = [
@@ -140,16 +142,30 @@ export const experience = [
   {
     dates: 'August 2023 – Present',
     organization: 'University of Memphis',
-    title: 'Graduate Researching Assistant',
+    title: 'Graduate Research Assistant',
     detail:
-      'Contributed across research contexts including AI-generated product creativity, e-commerce, immersive technologies, and visualization of Wikipedia search-data difference-in-difference analysis.',
+      'Analyze Wikipedia search behavior using difference-in-differences; develop regression-based driver and forecasting models, test group differences with ANOVA, apply multivariate methods, and visualize findings for faculty teams.',
   },
   {
     dates: 'September 2022 – May 2023',
     organization: 'Global Spectra at the Mullins Center',
     title: 'Financial Assistant',
     detail:
-      'Supported hiring processes, monthly financial statements and budget estimates, and box-office and game-day operations for UMass athletics.',
+      'Prepared monthly financial statements and budget estimates using Sage 100 and Excel, processed background checks through ADP, and supported box-office ticket sales and game-day operations for UMass hockey and basketball.',
+  },
+  {
+    dates: 'September 2022 – November 2022',
+    organization: '4am Chinese Student Basketball Club',
+    title: 'Club Head Coach and Team Captain',
+    detail:
+      'Led weekly training and developed game plans for a collegiate club team, including 2-3 and 3-2 zone defenses; guided the team to the playoffs.',
+  },
+  {
+    dates: 'April 2022 – May 2022',
+    organization: 'Sport Analytics Independent Study Project',
+    title: 'Independent Researcher',
+    detail:
+      'Analyzed the relationship between NBA player performance and annual salary using Python in Google Colab and 2019–2020 season data.',
   },
   {
     dates: 'January 2022 – May 2022',
@@ -157,6 +173,13 @@ export const experience = [
     title: 'Student Consultant',
     detail:
       'Led work on a new U.S. Open Cup tournament format and developed organizational, marketing, operations, and event-planning strategies for U.S. Soccer and CONCACAF.',
+  },
+  {
+    dates: 'June 2021 – August 2021',
+    organization: 'Naismith Memorial Basketball Hall of Fame',
+    title: 'Development Office Intern',
+    detail:
+      'Transferred, cleaned, and processed client data in Excel; updated the Raiser’s Edge donor database for the Annual Giving Manager; supported the Coach Circle initiative and Enshrinement Weekend.',
   },
   {
     dates: 'January 2021 – May 2021',

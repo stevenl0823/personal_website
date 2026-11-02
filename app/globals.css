@@ -257,6 +257,9 @@ section[id] {
 .paper-filter { min-height: 2.75rem; height: auto; border: 1px solid #dbe6ed; border-radius: 999px; padding: 0.5rem 0.85rem; font-size: 0.875rem; color: #475569; }
 .paper-filter.selected { background: #0b2741; color: white; border-color: #0b2741; }
 .paper-filter.selected:hover { background: #007c91; color: white; }
+.project-tab-list { min-height: 3rem; height: auto !important; max-width: 100%; flex-wrap: wrap; justify-content: start; gap: 0.25rem; border: 1px solid #dbe6ed; border-radius: 1rem; padding: 0.3rem; background: #eaf2f8; }
+.project-tab { min-height: 2.5rem; height: auto; padding: 0.55rem 0.85rem; border-radius: 0.75rem; font-size: 0.875rem; }
+.project-tab[data-active] { background: #0b2741; color: white; }
 a:focus-visible, button:focus-visible { outline: 3px solid #007c91; outline-offset: 4px; }
 .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 100; padding: 1rem; background: white; color: #10253f; }
 .skip-link:focus { top: 1rem; }

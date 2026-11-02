@@ -10,16 +10,17 @@ import {
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger,
 } from '@/components/ui/sheet';
 import {
   education, experience, profile, researchThemes, service, teaching, workingPapers,
 } from '@/data/profile';
-import { capabilityGroups, selectedExperience, portfolioProjects } from '@/data/portfolio';
+import { capabilityGroups, selectedExperience, portfolioProjects, existingStudy, projectBriefs } from '@/data/portfolio';
 
 const navigation = [
-  { label: 'Selected work', href: '#work' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Research', href: '#research' },
@@ -69,7 +70,7 @@ export default function Home() {
 
   return (
     <main className="site-shell">
-      <a className="skip-link" href="#work">Skip to content</a>
+      <a className="skip-link" href="#projects">Skip to content</a>
       <header className="site-header">
         <div className="container flex items-center justify-between gap-5 py-4">
           <a className="flex min-w-0 items-center gap-3 text-[#10253f]" href="#home">
@@ -84,8 +85,8 @@ export default function Home() {
             <a className="hidden text-sm font-semibold text-[#007c91] sm:inline-flex" href={profile.github} target="_blank" rel="noreferrer">
               <Github aria-hidden="true" className="mr-2 size-4" /> GitHub
             </a>
-            <a className="button-link button-dark hidden sm:inline-flex" href={profile.cvDownload} download>
-              <Download aria-hidden="true" className="size-4" /> Academic CV
+            <a className="button-link button-dark hidden sm:inline-flex" href={profile.resumeDownload} download>
+              <Download aria-hidden="true" className="size-4" /> Résumé PDF
             </a>
             <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
               <SheetTrigger aria-label="Open navigation menu" className="grid size-11 place-items-center rounded-xl border border-slate-200 bg-white xl:hidden">
@@ -100,7 +101,7 @@ export default function Home() {
                 <a className="button-link button-dark mt-8" href={profile.github} target="_blank" rel="noreferrer">
                   <Github aria-hidden="true" className="size-4" /> GitHub profile
                 </a>
-                <a className="text-link mt-3" href={profile.cvDownload} download>Download academic CV</a>
+                <a className="text-link mt-3" href={profile.resumeDownload} download>Download résumé PDF</a>
               </SheetContent>
             </Sheet>
           </div>
@@ -120,8 +121,8 @@ export default function Home() {
             </p>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">{profile.introduction}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a className="button-link button-cyan" href="#work">
-                Explore selected work <ArrowRight aria-hidden="true" className="size-4" />
+              <a className="button-link button-cyan" href="#projects">
+                Explore projects <ArrowRight aria-hidden="true" className="size-4" />
               </a>
               <a className="button-link button-glass" href={profile.github} target="_blank" rel="noreferrer">
                 <Github aria-hidden="true" className="size-4" /> GitHub
@@ -157,10 +158,74 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section container" id="work">
+      <section className="section container" id="projects">
+        <SectionHeading eyebrow="Analytics projects" title="Questions, methods, and evidence."
+          description="An existing sports analytics study and a roadmap for future case studies in business analytics, data analytics, and data science." />
+        <Tabs defaultValue="existing" className="mt-8">
+          <TabsList className="project-tab-list" aria-label="Project portfolio">
+            <TabsTrigger className="project-tab" value="existing">Existing study</TabsTrigger>
+            <TabsTrigger className="project-tab" value="roadmap">Project roadmap · 4 briefs</TabsTrigger>
+          </TabsList>
+          <TabsContent value="existing" className="mt-6">
+            <article className="rounded-3xl border border-[#a7d8df] bg-white p-6 sm:p-9">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <Badge variant="outline" className="h-auto whitespace-normal border-[#a7d8df] bg-cyan-50 px-3 py-1.5 text-sm text-[#00697d]">{existingStudy.status}</Badge>
+                <p className="text-sm text-slate-500">{existingStudy.dates}</p>
+              </div>
+              <div className="mt-7 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+                <div>
+                  <p className="eyebrow">Independent study · sports analytics</p>
+                  <h3 className="mt-3 font-serif text-3xl font-semibold tracking-tight">{existingStudy.title}</h3>
+                  <p className="mt-4 text-base leading-8 text-slate-600">{existingStudy.description}</p>
+                  <p className="mt-5 text-base font-semibold leading-7">{existingStudy.question}</p>
+                  <p className="mt-4 text-base leading-7 text-slate-600">{existingStudy.contribution}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {existingStudy.tags.map(tag => <span className="skill-chip" key={tag}>{tag}</span>)}
+                  </div>
+                </div>
+                <div className="rounded-2xl bg-[#eff6fa] p-6">
+                  <h4 className="text-base font-semibold">Case-study materials to add</h4>
+                  <ul className="mt-4 list-disc space-y-3 pl-5 text-base leading-7 text-slate-600">
+                    {existingStudy.materials.map(item => <li key={item}>{item}</li>)}
+                  </ul>
+                  <p className="mt-5 text-sm leading-6 text-slate-500">Notebook, charts, and result links will appear once the original materials are available.</p>
+                </div>
+              </div>
+            </article>
+          </TabsContent>
+          <TabsContent value="roadmap" className="mt-6">
+            <p className="mb-6 max-w-3xl text-base leading-8 text-slate-600">These proposed project briefs describe future additions. They are not completed analyses or reported results.</p>
+            <div className="grid gap-5 lg:grid-cols-2">
+              {projectBriefs.map(brief => (
+                <article className="work-card" key={brief.title}>
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <p className="eyebrow">{brief.category}</p>
+                    <Badge variant="outline" className="h-auto bg-slate-50 px-3 py-1 text-sm">Proposed project</Badge>
+                  </div>
+                  <h3 className="mt-5 font-serif text-2xl font-semibold">{brief.title}</h3>
+                  <p className="mt-4 text-base leading-7 text-slate-600">{brief.question}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {brief.tools.map(tool => <span className="skill-chip" key={tool}>{tool}</span>)}
+                  </div>
+                  <Accordion className="mt-5" multiple>
+                    <AccordionItem value={brief.title}>
+                      <AccordionTrigger className="py-3 text-base font-semibold">Evidence this case study should show</AccordionTrigger>
+                      <AccordionContent className="text-base leading-7 text-slate-600">
+                        <ul className="list-disc space-y-2 pl-5">{brief.materials.map(item => <li key={item}>{item}</li>)}</ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </article>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+      </section>
+
+      <section className="section container border-t border-slate-200" id="work">
         <SectionHeading eyebrow="Selected work & experience" title="From research questions to business context."
           description="A selection of research, venue operations, and student consulting experience that informs my approach to analysis." />
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {selectedExperience.map((item, index) => (
             <article className="work-card" key={item.title}>
               <div className="flex items-center justify-between gap-4">
@@ -236,6 +301,20 @@ export default function Home() {
             </li>
           ))}
         </ol>
+      </section>
+
+      <section className="container pb-16" id="resume">
+        <div className="flex flex-col gap-6 rounded-3xl border border-slate-200 bg-white p-7 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="eyebrow">Résumé</p>
+            <h2 className="mt-3 font-serif text-2xl font-semibold">Experience and analytical skills, in one page.</h2>
+            <p className="mt-3 text-base leading-7 text-slate-600">A downloadable résumé covering research, sports business, data management, education, and technical methods.</p>
+          </div>
+          <div className="flex shrink-0 flex-wrap gap-3">
+            <a className="button-link button-dark" href={profile.resumeDownload} download><Download aria-hidden="true" className="size-4" /> Download PDF</a>
+            <a className="button-link border-slate-200 bg-white text-[#007c91]" href={profile.resumeDownload} target="_blank" rel="noreferrer">View PDF <ExternalLink aria-hidden="true" className="size-4" /></a>
+          </div>
+        </div>
       </section>
 
       <section className="border-y border-slate-200 bg-[#eaf2f8]" id="education">
@@ -355,6 +434,8 @@ export default function Home() {
           <div className="flex flex-wrap gap-5">
             <a className="hover:text-white" href="#home">Back to top</a>
             <a className="hover:text-white" href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a className="hover:text-white" href={profile.sourceCode} target="_blank" rel="noreferrer">Website source</a>
+            <a className="hover:text-white" href={profile.resumeDownload} download>Résumé PDF</a>
             <a className="hover:text-white" href={profile.cvDownload} download>Academic CV</a>
           </div>
         </div>

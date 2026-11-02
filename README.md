@@ -11,7 +11,7 @@ Live website: https://wang-steven-liao-academic.stevenl960823.chatgpt.site
 - `app/page.tsx`: responsive homepage and reusable presentation components.
 - `app/globals.css`: shared navy/cyan theme and responsive styles.
 
-`portfolioProjects` is deliberately empty until a real analysis artifact is ready. Adding a reviewed entry automatically displays the case-study section. Include a business question, a verified finding, a public/synthetic-data disclosure, and code/dashboard links. Label course or team work accurately; identify individual contributions and respect dataset and client permissions. Do not add planned projects as completed work.
+The project section has an existing NBA salary/performance study with supporting materials pending, and four explicitly proposed project briefs. Update `existingStudy` and `projectBriefs` in `data/portfolio.ts` as evidence becomes available. `portfolioProjects` remains empty until full artifacts and findings are reviewed; adding an entry displays the completed case study. Include a question, verified finding, data disclosure, and working code/dashboard links.
 
 ## Develop
 
@@ -21,4 +21,6 @@ Install the locked dependencies with npm, run `npm run dev`, and run `npm run bu
 
 This GitHub repository stores the website source. Sites hosts the live website and retains its own publishing repository. A commit to GitHub alone does not update the live site; changes must also be built and published through Sites. No automatic GitHub-to-Sites publishing workflow is configured.
 
-Keep credentials, environment secrets, dependency folders, build output, and private job-search/application records out of this repository. The existing academic CV download is the originally supplied document; it is separate from the newer application résumé used to confirm PhD candidacy and the ongoing research-assistant role.
+The current résumé download is `public/wang-liao-resume.pdf`, refined from the supplied Wang_Liao_Resume_DA.pdf with its one-page layout preserved. The cover letter informs the general professional narrative; its employer-specific application text is not published. The academic CV is retained as a separate older source.
+
+Keep credentials, environment secrets, dependency folders, build output, and private job-search/application records out of this repository. Never publish client or donor records as project data.
