@@ -144,7 +144,7 @@ export const experience = [
     organization: 'University of Memphis',
     title: 'Graduate Research Assistant',
     detail:
-      'Analyze Wikipedia search behavior using difference-in-differences; develop regression-based driver and forecasting models, test group differences with ANOVA, apply multivariate methods, and visualize findings for faculty teams.',
+      'Analyze Wikipedia search data using difference-in-differences and visualize findings for faculty teams; apply regression, ANOVA, and structural equation modeling in graduate research.',
   },
   {
     dates: 'September 2022 – May 2023',
@@ -203,7 +203,7 @@ export const education = [
     institution: 'University of Massachusetts Amherst',
     school:
       'Isenberg School of Management · Mark H. McCormack Department of Sport Management',
-    credential: 'M.B.A/M.S. in Sport Management',
+    credential: 'M.B.A./M.S. in Sport Management',
     note: 'Overall GPA: 3.85',
   },
   {

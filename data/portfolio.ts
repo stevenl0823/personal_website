@@ -90,7 +90,7 @@ export const selectedExperience = [
     type: 'Academic research',
     organization: 'University of Memphis',
     description:
-      'Research experience involving regression-based driver and forecasting models, ANOVA, multivariate methods, and difference-in-differences analysis of Wikipedia search data.',
+      'Research experience involving regression, ANOVA, structural equation modeling, and difference-in-differences analysis of Wikipedia search data.',
     contribution:
       'Analyze research data, develop statistical models, and visualize findings for faculty teams while communicating assumptions and analytical limitations.',
     tags: ['Statistical analysis', 'Research methods', 'Visualization'],
@@ -141,7 +141,7 @@ export const capabilityGroups = [
   },
   {
     title: 'Statistical methods',
-    items: ['Regression', 'Forecasting', 'ANOVA', 'Structural equation modeling'],
+    items: ['Regression', 'Difference-in-differences', 'ANOVA', 'Structural equation modeling'],
     detail:
       'Research support includes visualization of difference-in-differences analysis.',
   },
